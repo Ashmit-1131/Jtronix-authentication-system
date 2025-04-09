@@ -19,32 +19,32 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .cors() // Enable CORS with our configuration
+            .cors() // Enable CORS
             .and()
-            .csrf(csrf -> csrf.disable()) // Disable CSRF for testing with Postman or during development
+            .csrf(csrf -> csrf.disable()) // Disable CSRF for development/testing
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/signup", "/api/signin").permitAll()
                 .anyRequest().authenticated()
             );
+
         return http.build();
     }
 
-    // CORS configuration bean for Spring Security
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // React app origin
+        
+        configuration.setAllowedOriginPatterns(Arrays.asList("*")); // Allow all origins
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setAllowCredentials(true);
-        
+        configuration.setAllowCredentials(true); // Allow cookies/auth headers
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        // Apply CORS settings to all endpoints
         source.registerCorsConfiguration("/**", configuration);
+
         return source;
     }
 
-    // Password encoder bean
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

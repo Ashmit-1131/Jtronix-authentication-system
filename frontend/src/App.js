@@ -22,7 +22,7 @@ const App = () => {
         </Toolbar>
       </AppBar>
       <Routes>
-        <Route path="/" element={<Navigate to="/signin" />} />
+        <Route path="/" element={<Navigate to="/signup" />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>

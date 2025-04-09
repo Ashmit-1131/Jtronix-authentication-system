@@ -62,7 +62,7 @@ const SignUp = () => {
     } catch (err) {
       const errorMsg = (err.response && err.response.data && err.response.data.message)
         ? err.response.data.message
-        : 'Signup failed due to a network or server issue.';
+        : 'Signup failed due to a network or server issue.or email already exist';
       enqueueSnackbar(errorMsg, { variant: 'error' });
       console.error('Error during signup:', err);
     }

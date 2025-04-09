@@ -41,7 +41,7 @@ const SignIn = () => {
     } catch (err) {
       const errorMsg =
         (err.response && err.response.data && err.response.data.message) ||
-        'Login failed due to network or server issue.';
+        'Login failed due to network or server issue. or Password is not correct';
       enqueueSnackbar(errorMsg, { variant: 'error' });
       console.error('Error during signin:', err);
     }
