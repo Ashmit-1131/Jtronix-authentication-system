@@ -5,7 +5,7 @@
 
 A simple authentication system built with **Spring Boot** and **MongoDB** that supports **user registration and login** with password hashing.
 
-## 🚀 Features
+##  Features
 
 - User Registration (`/api/signup`)
 - User Login (`/api/signin`)
@@ -13,7 +13,7 @@ A simple authentication system built with **Spring Boot** and **MongoDB** that s
 - MongoDB for data persistence
 - Spring Security integration
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Java 21
 - Spring Boot 3
@@ -21,7 +21,7 @@ A simple authentication system built with **Spring Boot** and **MongoDB** that s
 - MongoDB
 - BCrypt for password encryption
 
-## 📦 Setup Instructions
+##  Setup Instructions
 
 1. **Clone the repo**
 
@@ -60,6 +60,31 @@ Add a json like this:-
  "email": "john@example.com",
  "password": "secure123"
     }
+
+
+
+# JTRONIX Authentication System - Frontend
+
+This is the frontend implementation for the JTRONIX Authentication System using ReactJS with Material-UI and notistack for alerts. The application provides a clean and responsive user interface for user registration (Sign Up) and login (Sign In), and redirects users appropriately after successful actions.
+
+## Features
+
+- **Responsive Design:** Built with Material-UI components for a modern, responsive layout.
+- **User Authentication:** Sign Up and Sign In forms with real-time validations.
+- **Notifications:** Uses notistack to display success and error messages.
+- **Routing:** Implements React Router for navigation between Sign Up and Sign In pages.
+- **Integration:** Connects seamlessly with the Spring Boot backend APIs.
+
+
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+  git clone https://github.com/Ashmit-1131/Jtronix-authentication-system
+cd frontend
+npm install
+npm start :-  your frontend application will be running on :- http://localhost:3000
 
 
 
