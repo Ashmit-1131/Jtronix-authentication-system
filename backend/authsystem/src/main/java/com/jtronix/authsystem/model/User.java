@@ -1,6 +1,7 @@
 package com.jtronix.authsystem.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("users")
@@ -10,7 +11,10 @@ public class User {
 
     private String firstName;
     private String lastName;
+
+    @Indexed(unique = true)  // Enforce email uniqueness
     private String email;
+
     private String address;
     private String password;
 

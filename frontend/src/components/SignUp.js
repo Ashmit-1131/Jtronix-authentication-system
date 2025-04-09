@@ -45,7 +45,7 @@ const SignUp = () => {
     if (!validateForm()) return;
 
     try {
-      await axios.post('http://localhost:8080/api/signup', user);
+      await axios.post('https://jtronix-authentication-system-3.onrender.com/api/signup', user);
       enqueueSnackbar('Sign up successful! Redirecting to Sign In...', { variant: 'success' });
 
       setTimeout(() => {
